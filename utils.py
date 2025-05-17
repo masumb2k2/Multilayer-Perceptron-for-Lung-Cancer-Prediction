@@ -24,13 +24,13 @@ def preprocess(df):
         if col not in ['GENDER', 'LUNG_CANCER']:
             df[col] = df[col].replace(0, np.nan)
             df[col] = df[col].fillna(df[col].mean())
-            print('----------------------------------------------')
-            print("After preprocessing")
-            print("Number of rows with 0 values for each variable")
-            for col in df.columns:
-                missing_rows = df.loc[df[col] == 0].shape[0] if df[col].dtype != 'object' else 0
-                print(f"{col}: {missing_rows}")
-            print('----------------------------------------------')
+    print('----------------------------------------------')
+    print("After preprocessing")
+    print("Number of rows with 0 values for each variable")
+    for col in df.columns:
+        missing_rows = df.loc[df[col] == 0].shape[0] if df[col].dtype != 'object' else 0
+        print(f"{col}: {missing_rows}")
+    print('----------------------------------------------')
 
 
 
